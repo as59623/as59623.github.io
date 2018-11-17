@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DDAR財經新聞分析法－結論</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<h1 id="fh5co-logo"><a href="index.html">DDAR</a></h1>
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li><a href="part1.html">簡　　介</a></li>
+                    <!--研究目的+新聞資料來源-->
+					<li><a href="part2.html">方法與模型</a></li>
+                    <!--財經字典+九大面向+DDR-->
+					<li><a href="part3.html">資料特性－描述性統計</a></li>
+                    <!--4大主題-->
+					<li><a href="part4.html">模型正確率－成果展示</a></li>
+					<li class="fh5co-active"><a href="part5.html">結　　論</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div id="fh5co-main">
+			<div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Summary</h2>
+				<div class="row">
+						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+							<div class="fh5co-text">
+								<h3>本研究提出專門分析財經新聞情緒的模型-DDR，這個模型利用本研究專屬建立之財經字典、情緒字典、面向字典，運用Random forest，將面向分數整合後，所產生的模型。此評分模型整合了文字探勘、情緒分析以及隨機森林等相關概念所形成的。最後與NTUSD情緒字典做比較。以下將說明本研究的研究成果。<br>在網路科技快速更新的今日，想要獲取有用的資訊時常要使用文字探勘技術，然而現今的文字探勘技術大多適用於多種領域，其斷詞系統針對特定領域的分析結果常會不如預期，且在一般的研究裡，分析財經新聞的情緒是採用全部情緒做加總，無法知道文章中哪些面向有較大的影響程度。為改善這些狀況，本研究建構專屬的財經字典、財經正向和負向字典，以及財經面向字典，並利用Random Forest整合財經新聞各面向分數，製作一情緒評分模型—DDR。<br>現今大多文字探勘技術，僅針對抓出字詞分析，並不會針對特定領域而使用不同的斷詞方法，因此當我們在針對特定領域做分析時，通常會遭遇很多困難，一般認為是正向或不是一個有特別意思的詞，但在特定領域可能會是一個專有名詞，例如「紅海」，在一般領域沒有特別意義，但在財經上卻是指利潤和增長前途越趨黯淡的市場，為較負面的詞。因此本研究之DDR模型能精準地依據我們所想知道之面向分析財經新聞，在現今文字探勘之領域是一大突破。<br>本研究在進行隨機森林預測時，除了使用自製的九大面向評分結果作為變數，再另外新增一個變數：將九個面向評分結果分數加總後，使用一個以四為「轉換指標」，將分數都轉換為-1分、0分、+1分，命名為all_our_change以及all_ntu_change（簡稱AOC、ANC變數，分別為我們的財經字典以及台灣大學情緒字典）。由於正負新聞比例相差懸殊，會使我們誤判「轉換指標」，進而導致正確率不合理的膨脹，因此我們從這正向、負向、持平新聞當中隨機各抽取2,000篇新聞出來進行分析。在R語言中用十次不同的set.seed，分出訓練資料集80%－總計4,800篇新聞、測試資料集20%－總計1,200篇新聞，進行隨機森林，並且將十次結果進行平均，最後使用平均數值做為結果來解釋。<br>本研究中，總共有三種變數組合進行隨機森林預測，第一種（lab1）是九大面向各個分數加上AOC或是ANC變數，總共十個變數去預測人為評分結果；第二種（lab2）是僅有AOC或是ANC單一一個變數去預測人為評分結果；第三種（lab3）是僅有九大面向各個分數總共九個變數去預測人為評分結果。<br>本研究之DDR模型分析出的正確率，正確率都優於使用台灣大學情緒字典分析之結果，更能與人為情緒評分契合。最後，由於AOC、ANC變數對於提高正確率沒有顯著影響，因此本研究所得出之結論，使用第三種變數組合模型，只用九大面向分數總共九個變數去預測人為評分的模型，結果會與人為評分最為相近。</h3>
+							</div>
+						</div>
+                </div>
+                </div>	
+			<div id="get-in-touch">
+				<div class="fh5co-narrow-content">	
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<p><a href="index.html" class="btn btn-primary">回首頁</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
