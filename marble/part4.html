@@ -6,7 +6,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DDAR財經新聞分析法－模型正確率與成果</title>
+	<title>D-DAR財經新聞分析法－模型正確率與成果</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -41,7 +41,7 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="index.html">DDAR</a></h1>
+			<h1 id="fh5co-logo"><a href="index.html">D-DAR</a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
 					<li><a href="part1.html">簡　　介</a></li>
@@ -59,12 +59,12 @@
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Accuracy & Results</h2>
-				<div class="row row-bottom-padded-md">
+                <div class="row row-bottom-padded-md">
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">							
 							<div class="desc">
 								<h3><a href="#e1" class="js-scroll-trigger">Model accurate</a></h3>
-								<p>DDAR模型－指標轉換</p>
+								<p>D-DAR模型－比較總正確率</p>
 								<a href="#e1" class="lead js-scroll-trigger">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
@@ -72,7 +72,8 @@
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
 							<div class="desc">
-								<h3><a href="#e2" class="js-scroll-trigger">Random Forest</a></h3>								<p>DDAR模型－正確率與與隨機森林</p>
+								<h3><a href="#e2" class="js-scroll-trigger">Random Forest</a></h3>
+                                <p>D-DAR模型－人為與模型評分差異</p>
 								<a href="#e2" class="lead js-scroll-trigger">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
@@ -81,59 +82,61 @@
 						<div class="blog-entry">
 							<div class="desc">
 								<h3><a href="#e3" class="js-scroll-trigger">Variables</a></h3>
-								<p>DDAR模型－結果與變數</p>
+								<p>D-DAR模型－變數重要性</p>
 								<a href="#e3" class="lead js-scroll-trigger">Read More <i class="icon-arrow-right3"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-            <div class="fh5co-narrow-content">
-            <div class="row row-bottom-padded-md" id="e1">
-                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">DDAR模型－指標轉換</h2>
+            <div class="fh5co-narrow-content" id="e1">
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">D-DAR模型－比較總正確率</h2>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
-								<h3>本研究對鉅亨網上總計29,967篇新聞，使用Excel移除重複功能進行篩選，將內容完全重複的新聞刪除以後，針對總計23,957篇新聞以人為的方式進行評分，覺得該篇新聞一定會跌就給予-2分、覺得該篇新聞可能會跌就給予-1分、覺得該篇新聞不會漲也不會跌就給予0分、覺得該篇新聞可能會漲就給予+1分、覺得該篇新聞一定會漲就給予+2分，總共有五個尺度而最後再在統整時，本研究將分數為-1分、-2分的新聞分成跌（負）分類，記成-1分；將分數為0的新聞分成零（不漲不跌）分類，分數不做調整；將+1分、+2分的新聞分成漲（正）分類，記成1分。<br>進行隨機森林預測時除了使用自製的九大面向評分結果作為變數，再另外新增一個變數：將九個面向評分結果分數加總後，使用一個「轉換指標」，將分數都轉換為-1分、0分、+1分，命名為all_our_change以及all_ntu_change（以下簡稱AOC、ANC變數）。<br>由於在總計23,957篇新聞的人為評分結果之中，正負新聞比例相差懸殊（-1分總計2,101篇，0分總計13,254篇，+1分8,602篇），這會使我們誤判「轉換指標」，進而導致正確率不合理的膨脹，因此本研究從這三類新聞當中隨機各抽取2,000篇新聞出來，總計6,000篇新聞(以下簡稱ST檔案)進行分析。<br>AOC、ANC變數的原始數值介於負無限大至正無限大，這樣的數值範圍本研究無法精準的與人為評分比較，因此本研究決定使用「轉換指標」進行分數上的轉換，大於正X分轉換為1分，0分不轉換，小於負X分轉換為負1分，並對X進行1-9的測試，呈現結果如下表所示，最後本研究挑選以四為轉換指標進行AOC、ANC原始數值的轉換。</h3>
-                                <h3>本研究將模型評分以及人為評分都進行轉換以後，在R語言中用十次不同的set.seed，分出訓練資料集80%－總計4,800篇新聞、測試資料集20%－總計1,200篇新聞，進行隨機森林，並且將十次結果進行平均，最後使用平均數值做為結果來解釋。</h3>
+								<h3>D-DAR模型分成兩種字典來比較結果：<br><br>
+                                    1. 本研究的財經情緒字典－SPD 2.0<br><br>
+                                    2. 台灣大學提供的情緒字典<br><br><br>
+                                    以上述兩種字典九大面向分數加總，轉換形成變數，<br><br>
+                                    以下簡稱AOC變數（本研究）、ANC變數（台大）<br><br>
+                                    為比較兩種字典的正確率，以下使用三種實驗方法進行預測：<br><br>
+                                    Lab1. 變數採用九大面向分別加上AOC或是ANC變數，共十個變數<br><br>
+                                    Lab2. 僅採用AOC或是ANC變數<br><br>
+                                    Lab3. 僅採用九大面向共九個變數<br><br>
+                                    <img src="未命名.png" width=60% align=center>
+                                </h3>
                         </div>
+                        <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
 						</div>
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-text"><a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
                 </div>
-                <div class="row row-bottom-padded-md" id="e2">
-                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">DDAR模型－正確率與隨機森林</h2>
+                <div class="fh5co-narrow-content" id="e2">
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">D-DAR模型－人為與模型評分差異</h2>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
-								<h3>本研究總共有三種變數組合進行隨機森林預測，第一種（lab1）是九大面向各個分數加上AOC或是ANC變數，總共十個變數去預測人為評分結果；第二種（lab2）是僅有AOC或是ANC單一一個變數去預測人為評分結果；第三種（lab3）是僅有九大面向各個分數總共九個變數去預測人為評分結果。<br>經由十次隨機森林的結果，可以得兩個平均值如下表，一個是透過本研究所整理的情緒字典所做出的評分（表5-4-2）、一個是透過台大情緒字典所做出的評分（表5-4-3），並且針對此兩種方法進行比較分析，為了計算上的方便我們將正確率以四捨五入的方式取到小數點第二位，進位以後所做出的平均可能會產生些許誤差，但並不影響本研究。而十次隨機森林的結果本研究將在結果說明以及此二表以後呈現。<br>從下兩表可以得知，不管是用本研究的情緒字典或是台大的情緒字典，第一種、第三種變數組合的總正確率並無二致，第二種變數組合的總正確率相對較低，因此得知本研究使用「轉換指標」所新增的AOC、ANC變數無法使情緒分析的總正確率有明顯的提升。而三種變數組合之中正確率都是+1分最高，其次是0分、最後是-1分，因此最容易被分錯分類的是-1分。<br>從confusion table我們可以得知，在第一種、第三種變數組合的情況下，-1分最容易被分錯到0分，被誤判到+1分的較少； 0分最容易被分錯到+1分，被誤判到-1分的較少；+1分最容易被分錯到0分，被誤判到-1分的較少，但是三種分錯分類相差的比例並不會太懸殊。在第二種變數組合的情況下，-1分最容易被分錯到0分，被誤判到+1分的較少，但是相差的比例並不會太懸殊； 0分最容易被分錯到+1分，被誤判到-1分的情況較少，被分錯到+1分的比例相對非常的高；+1分最容易被分錯到0分，被誤判到-1分的情況較少，被分錯到0分的比例相對較高。</h3>
+                                <h3>D-DAR模型採用九大面向共九個變數，以隨機抽樣約6,000篇新聞為樣本，<br><br>
+                                    使用十次隨機森林建模後，以混沌矩陣比較與人為評分的差異。<br><br>
+                                    <img src="未命名2.png" width=60% align=center><br><br>
+                                    此矩陣顯示模型評分與人為評分判定正確率皆達五成以上，<br><br>
+                                    正向類別的正確率更能高達七成五，<br><br>
+                                    因此能認定此模型的準確度是可信的。
+                                </h3>
                         </div>
+                        <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
 						</div>
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-text"><a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
-                        </div>
                     </div>
-                </div>
-                <div class="row row-bottom-padded-md" id="e3">
-                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">DDAR模型－結果與變數</h2>
+                <div class="fh5co-narrow-content" id="e3">
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">D-DAR模型－變數重要性</h2>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
-								<h3>由於AOC、ANC變數對於提高正確率沒有顯著影響，因此我們最後挑選的是第三種變數組合模型，只用九大面向分數總共九個變數去預測人為評分的模型，此模型的變數中重要性最高的是面向1（個別公司財報面向(獲利能力)）、其次是面向5（股價面向(技術面)），因此我們可以得知最有可能影響人為評分分數結果的變數是個別公司財報面向(獲利能力)，第二可能影響人為評分分數結果的變數是股價面向(技術面)。</h3>
-                        </div>
+								<h3>D-DAR模型採用九大面向的變數，<br><br>
+                                    以隨機森林建模中的變數重要性判斷<br><br>
+                                    九大面向對於模型評分的影響力。<br><br>
+                                    <img src="未命名3.png" width=50% align=center><br><br>
+                                    個別公司財報獲利能力面向最為重要，<br><br>
+                                    次要則為股價技術面面向。
+                                </h3>
 						</div>
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-text"><a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
-                        </div>
-                    </div>
+                        <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
+						</div>
                 </div>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/img_bg_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-					</div>
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<h2 class="fh5co-heading">Title</h2>
-						<p>Content</p>
-						<p>Content 2</p>
-					</div>
 			<div id="get-in-touch">
 				<div class="fh5co-narrow-content">	
 					<div class="row">
@@ -144,7 +147,7 @@
 				</div>
 			</div>
             </div>
-		</div>
+        </div>
         </div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
