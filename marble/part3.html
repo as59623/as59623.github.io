@@ -34,6 +34,34 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+    <style> 
+        .black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 100%; 
+            height: 100%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+        } 
+        .white_content { 
+            display: none; 
+            position: absolute; 
+            top: auto; 
+            left: auto; 
+            width: auto; 
+            height: auto;
+            padding: 20px; 
+            border: 10px solid #228896; 
+            background-color: white; 
+            z-index:1002; 
+            overflow: auto; 
+        } 
+    </style> 
 
 	</head>
 	<body>
@@ -41,7 +69,7 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="index.html">DDAR</a></h1>
+			<h1 id="fh5co-logo"><a href="index.html">D-DAR</a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
 					<li><a href="part1.html">簡　　介</a></li>
@@ -101,101 +129,139 @@
 				<div class="row">
 						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
-								<h3>此次研究我們採用2013年1月至2018年10月份的新聞資料，在做分析前首先將資料以視覺化方式結合九大面向做描述性統計，以利先行了解資料的特性。<br>以下我們以新聞資料中最近期的一個月－2018年10月，以及最近期的一季－2018年8月至10月的新聞舉例分析。主要以運用TF-IDF列出各面向出現頻率由高至低的面向詞，及利用文字雲呈現，使結果更加明瞭。</h3>
-                                <a href="#" class="lead">Back<i class="icon-arrow-right3"></i></a>
-							</div>
+								<h3>將新聞資料以視覺化方式<br><br>
+                                    結合九大面向做描述性統計，以利先行了解資料的特性。<br><br>
+                                    以下我們以新聞資料中最近期的一個月－2018年10月的新聞舉例分析。<br><br>
+                                    利用TF-IDF列出頻率由高至低的相關詞，及利用文字雲呈現，<br><br>
+                                    使投資者能更迅速瞭解新聞相關特性</h3>
+                            </div>
+                            <a href="#" class="lead">Back<i class="icon-arrow-right3"></i></a>
 						</div>
-                </div>	
-				<div class="row row-bottom-padded-md" id="d1">
+                    </div>
+                </div>
+				<div class="fh5co-narrow-content" id="d1">
                     <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Chapter 1－九大面向詞分析與作圖</h2>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
-								<h3>本主題的分析為：<br><br>
-                                    1. 首先分為九大面向，每個面向中都有相對應的面向詞<br>
-                                    2. 擷取特定區間的新聞資料，並取出新聞中包含的面向詞<br>
-                                    3. 將取得的面向詞分別歸類於九大面向<br>
-                                    4. 分析此區間的新聞中，在九大面向類裡的面向詞頻率高低</h3>
+								<h3>新聞中的財經詞分為九個面向<br><br>
+                                    分析新聞中重要的面向詞<br><br>
+                                    以面向詞出現頻率來了解其重要性
+                                </h3>
 							</div>
 						</div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx1()" class="work image-popup" style="background-image: url(images/img-1.jpg);" >
 							<div class="desc">
                                 <h3 align=left>　　面向一：</h3><h3 align=center>個別公司財報面向－獲利能力</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
-					</div>
+                    </div>
+                        <div id="x1" class="white_content" style.display='none'>
+                            <img src="picture/1-1.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx1()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
-							<div class="desc">
+						<a href="JavaScript:void(0)" onclick = "openDialogx2()" class="work image-popup" style="background-image: url(images/img-2.jpg);" >
+						    <div class="desc">
 								<h3 align=left>　　面向二：</h3><h3 align=center>個別公司財報面向－安全性評估</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x2" class="white_content" style.display='none'>
+                            此段期間的新聞中，並未提及對於安全性評估的面向詞<br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx2()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-3.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx3()" class="work image-popup" style="background-image: url(images/img-3.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向三：</h3><h3 align=center>個別公司財報面向－成長力分析</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x3" class="white_content" style.display='none'>
+                            此段期間的新聞中，並未提及對於成長力分析面向詞<br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx3()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-4.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx4()" class="work image-popup" style="background-image: url(images/img-4.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向四：</h3><h3 align=center>個別公司財報面向－價值評估</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x4" class="white_content" style.display='none'>
+                            <img src="picture/1-4.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx4()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-5.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx5()" class="work image-popup" style="background-image: url(images/img-5.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向五：</h3><h3 align=center>股價面向－技術面</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x5" class="white_content" style.display='none'>
+                            <img src="picture/1-5.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx5()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-6.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx6()" class="work image-popup" style="background-image: url(images/img-6.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向六：</h3><h3 align=center>個別公司競爭力</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x6" class="white_content" style.display='none'>
+                            <img src="picture/1-6.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx6()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx7()" class="work image-popup" style="background-image: url(images/img-1.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向七：</h3><h3 align=center>產業面</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x7" class="white_content" style.display='none'>
+                            <img src="picture/1-7.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx7()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx8()" class="work image-popup" style="background-image: url(images/img-2.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向八：</h3><h3 align=center>國內外重要指數及資產價格漲跌</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
+                    <div id="x8" class="white_content" style.display='none'>
+                            <img src="picture/1-8.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx8()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx9()" class="work image-popup" style="background-image: url(images/img-3.jpg);" >
 							<div class="desc">
 								<h3 align=left>　　面向九：</h3><h3 align=center>籌碼面</h3>
 								<span>2018年10月</span>
 							</div>
 						</a>
 					</div>
-					<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-							<div class="fh5co-text"><a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
+                    <div id="x9" class="white_content" style.display='none'>
+                            <img src="picture/1-9.png"><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx9()" >CLOSE</a></h5>
                         </div>
+					<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                        <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
                     </div>
 				</div>
-			</div>
-                <div class="row row-bottom-padded-md" id="d2">
+                <div class="fh5co-narrow-content" id="d2">
                     <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Chapter 2－提到前三名面向的新聞裡面有出現的正負情緒詞</h2>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
 							<div class="fh5co-text">
@@ -268,7 +334,9 @@
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+    <script src="js/part3.js"></script>
 
 	</body>
+    
 </html>
 
