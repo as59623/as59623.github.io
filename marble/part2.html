@@ -36,10 +36,39 @@
 	<![endif]-->
         
     <!--bootstrap-->
+        <style> 
+        .black_overlay{ 
+            display: none; 
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            width: 50%; 
+            height: 100%; 
+            background-color: black; 
+            z-index:1001; 
+            -moz-opacity: 0.8; 
+            opacity:.80; 
+            filter: alpha(opacity=88); 
+        } 
+        .white_content { 
+            display: none; 
+            position: absolute; 
+            top: auto; 
+            left: auto; 
+            width: 50%; 
+            height: auto;
+            padding: 20px; 
+            border: 10px solid #228896; 
+            background-color: white; 
+            z-index:1002; 
+            overflow: auto; 
+        } 
+    </style> 
         
 	</head>
 	<body>
 	<div id="fh5co-page">
+        ※使用電腦全螢幕查看能達到最好的效果※
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
@@ -103,17 +132,17 @@
                                     <table border="4" width=70%　align=center>
                                         <tr>
                                         <th>　　　　</th>
-                                        <th align="center"><br>SPD 2.0財經情緒字典新增詞彙<br><br></th>
+                                        <th align="center"><br>　　　　　　　　　SPD 2.0財經情緒字典新增詞彙　　　　　　　　　<br><br></th>
                                         </tr>
                                         <tr>
-                                        <th>正向</th>
+                                        <th>　　正向　　</th>
                                         <td align="center"><br>淡季不淡、觸底反彈、轉虧為盈、由虧轉盈、跳空漲停、<br><br>
                                             去瓶頸、抗跌維穩、急拉漲停、不亞於、成長、大幅領先、<br><br>
                                             持續上揚、成長看俏、財測高標、挹注、損平、強勢填權、<br><br>
                                             價量齊揚、看俏、收紅、走勢看俏、動能看俏、營運看俏、<br><br>
                                             高峰、突破、位數成長、回升<br><br></td>
                                         </tr>
-                                        <th align="center">負向</th>
+                                        <th align="center">　　負向　　</th>
                                         <td align="center"><br>不法獲利、不甚滿意、轉盈為虧、獲利失色、漲多回跌、<br><br>
                                             下挫、走軟、賣壓出籠、逆勢收低、跌深<br><br></td>
                                     </table>
@@ -130,70 +159,150 @@
 								<h3>以中文財經詞典為底，將財經詞分為九大面向，形成財經面向詞典，為此研究最主要使用之詞典。</h3>
 							</div>
 						</div>
-                    <div class="row row-bottom-padded-md" id=c21>
                         <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx1()" class="work image-popup" style="background-image: url(images/_img-1.jpg);" >
 							<div class="desc">
                                 <h3 align=left>　　面向一：</h3><h3 align=center>個別公司財報面向－獲利能力</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x1" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　個別公司財報面向－獲利能力　　　　　　　　　</th></tr>
+                                <tr><td align=center>股東權益報酬率、繼續營業單位本期淨利、繼續營業單位本期淨損、本期淨利、本期淨損、所得稅費用、稅後淨利、稅後盈餘、稅後純益、營收、營業收入、營業成本、營業費用、營業損失、營業外收入、營業外支出、營業外的損益、合併營收、每股純益、總體營收、營收規模、稅前淨利、稅前盈餘、稅前純益、所得稅費用、基本每股盈餘、每股盈餘、每股的EPS、EPS、毛利率、營業利益率、營業利益率百分比、營業利益率、營益率、稅前淨利率、稅後淨利率、營業費用率、營業毛利、營業利益、銷售費用率、管理費用率、研發費用率、轉投資的損益</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx1()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx2()" class="work image-popup" style="background-image: url(images/_img-2.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向二：</h3><h3 align=center>個別公司財報面向－安全性評估</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x2" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　個別公司財報面向－安全性評估　　　　　　　　　</th></tr>
+                                <tr><td align=center>每股淨值、流動比、速動比、負債比、流動資產、非流動資產、應收帳款收現天數、存貨週轉天數、資產週轉率、應收帳款周轉率、存貨週轉率、營運週轉天數、利息保障倍數、業外收支佔稅前淨利比、資本適足率</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx2()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-3.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx3()" class="work image-popup" style="background-image: url(images/_img-3.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向三：</h3><h3 align=center>個別公司財報面向－成長力分析</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x3" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　個別公司財報面向－成長力分析　　　　　　　　　</th></tr>
+                                <tr><td align=center>月營收年增率、季營收年增率、年營收年增率、毛利年增率、營業利益年增率、稅前淨利年增率、稅後淨利年增率、淨利年增率、EPS年增率、每股盈餘年增率、盈餘再投資比率、營再率</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx3()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-4.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx4()" class="work image-popup" style="background-image: url(images/_img-4.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向四：</h3><h3 align=center>個別公司財報面向－價值評估</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x4" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　個別公司財報面向－價值評估　　　　　　　　　</th></tr>
+                                <tr><td align=center>流動負債、短期負債、非流動負債、長期負債、資產總計、資產總額、負債總計、負債總額、保留盈餘、資本公積、歸屬於母公司業主之權益、權益、股本、資本額、資本公積、股價淨值比、本益比、股息、股利、股票股利、現金股利、現金股息、現金股利發放率</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx4()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-5.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx5()" class="work image-popup" style="background-image: url(images/_img-5.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向五：</h3><h3 align=center>股價面向－技術面</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x5" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　　　　股價面向－技術面　　　　　　　　　　　　</th></tr>
+                                <tr><td align=center>買價、賣價、成交價、最高價、盤中的最高價、最低價、盤中的最低價、參考價、開盤參考價、漲停價、跌停價、收盤價、開盤價、漲跌、漲跌幅、振幅、昨日收盤價、成交量、單量、均價、均量、歷史高價、歷史低價高檔、最高點、最低點、大盤、委買量、委賣量、股價、大盤、止穩、低檔、高點、低點、報價、大漲、大跌、崩盤、報復性上漲、支撐、買盤、賣盤、漲勢</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx5()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-6.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx6()" class="work image-popup" style="background-image: url(images/_img-6.jpg);">
 							<div class="desc">
                                 <h3 align=left>　　面向六：</h3><h3 align=center>個別公司競爭力</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x6" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　　　　個別公司競爭力　　　　　　　　　　　　</th></tr>
+                                <tr><td align=center>收購、併購、結盟、投資、合資、市占、市佔率、市占率、市場占有率、市場佔有率、占有率、佔有率、獲利、虧損、利多、法說會、營運、產能利用率、合併營業額、年增率、出貨量、產品、獨佔、獨占、寡占、寡佔、個股</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx6()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx7()" class="work image-popup" style="background-image: url(images/_img-7.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向七：</h3><h3 align=center>產業面</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x7" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　　　　　　產業面　　　　　　　　　　　　　　</th></tr>
+                                <tr><td align=center>產業、景氣、市場、市場預期、市場價值、拉貨力道、通路、外銷類股、內需類股、相關族群、供應鏈、上游、下游、需求、供給、經濟成長率、貿易戰、貨幣戰、金屬報價、大豆報價</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx7()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-2.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx8()" class="work image-popup" style="background-image: url(images/_img-8.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向八：</h3><h3 align=center>國內外重要指數及資產價格漲跌</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x8" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　國內外重要指數及資產價格漲跌　　　　　　　　　</th></tr>
+                                <tr><td align=center>台灣加權股價指數、加權股價指數、大盤、道瓊指數、道瓊期貨指數、nasdaq、s&p500、日經指數、上證指數、上海綜合指數、深圳綜合指數、法國巴黎指數、法蘭克福指數、黃金價格、比特幣價格、美元升值、美元貶值、美元、歐元升值、歐元貶值、歐元、日元升值、日元貶值、日元、人民幣升值、人民幣貶值、人民幣、北海布蘭特原油價格、西德州原油價格、原油價格、北海布蘭特原油價格漲、西德州原油價格漲、原油價格漲、北海布蘭特原油價格跌、西德州原油價格跌、原油價格跌</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx8()" >CLOSE</a></h5>
+                        </div>
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
-						<a href="#" class="work image-popup" style="background-image: url(images/img-1.jpg);">
+						<a href="JavaScript:void(0)" onclick = "openDialogx9()" class="work image-popup" style="background-image: url(images/_img-9.jpg);">
 							<div class="desc">
 								<h3 align=left>　　面向九：</h3><h3 align=center>籌碼面</h3>
 							</div>
 						</a>
 					</div>
+                        <div id="x9" class="white_content" style.display='none'>
+                            <table border="4"　align=center>
+                                <tr>
+                                    <th align=center>　　　　　　　　　　　　　　籌碼面　　　　　　　　　　　　　　</th></tr>
+                                <tr><td align=center>普通股、特別股、庫藏股、買回、持股、融資餘額、融券餘額、盤後交易、鉅額交易、外資、投信、自營商、政府機構、法人、大股東、董監事持股、大戶、散戶、股東、股東會、海外控股、現金增資認購數、認購數、增資股上市</td>
+                                </tr>
+                            </table><br><br>
+                            <h5 align=center><a href = "javascript:void(0)" onclick = "closeDialogx9()" >CLOSE</a></h5>
+                        </div>
                     </div>
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
                     <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
@@ -208,7 +317,7 @@
                                     套用隨機森林（Random Forest）的模型來整合各面向的分數與人為評分間的差異，<br><br>
                                     使模型具有預測能力和解釋能力。<br><br>
                                     以下為D-DAR模型演算法：<br><br>
-                                    <img src="擷取.png" width=60% align=center>
+                                    <img src="擷取.png" width=45% align=center>
                                 </h3>
 							</div>
                             <a href="#fh5co-main" class="lead js-scroll-trigger">Back<i class="icon-arrow-right3"></i></a>
@@ -225,7 +334,6 @@
 				</div>
 			</div>
 		</div>
-        </div>
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -241,6 +349,7 @@
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+        <script src="js/part3.js"></script>
 
 	</body>
 </html>
