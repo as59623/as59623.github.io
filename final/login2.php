@@ -1,0 +1,36 @@
+<?
+    $id=$_POST["account_id"];
+    $password=$_POST["password"];
+    $link=mysql_connect("localhost","root","12345");
+    mysql_select_db("project_schema",$link);
+    $sql="SELECT `permission` FROM account WHERE user='$id' AND password='$password'";
+    $rs=mysql_query($sql,$link);
+    $record=mysql_fetch_row($rs);
+    if($record[0]=="管理員"){
+        session_start();
+        $_SESSION["user"]="root";
+        $_SESSION["id"]=$id;
+        header('location:index.php');
+    }
+    elseif($record[0]=='教師'){
+        session_start();
+        $_SESSION["user"]="teacher";
+        $_SESSION["id"]=$id;
+        header('location:index.php');
+    }
+    elseif($record[0]=='學生'){
+        session_start();
+        $_SESSION["user"]="student";
+        $_SESSION["id"]=$id;
+        header('location:index.php');
+    }
+    else{
+?>
+<script>
+    alert('帳號密碼錯誤');
+    history.back();
+
+</script>
+<?
+    }
+?>
